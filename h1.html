@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<style>
+.mySlides {display:none;}    
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  
+}
+#nav_bar{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+} 
+#nav_bar >a{
+    border-top: 4px solid #2196F3; 
+}
+
+.footer_section{
+  background-color: #2196F3;
+}
+
+.about_section > nav >a {
+  margin: 20px;
+  text-decoration: none;
+  color: antiquewhite;
+}
+.footer_address{
+  padding: 50px;
+  text-decoration: none;
+  color: aliceblue;
+}
+.footer_image{
+  padding: 50px;
+}
+
+
+.carousel-container {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.navigation .prev {
+  position: absolute;
+  z-index: 10;
+  font-size: 25px;
+  top: 45%;
+  left: 10px;
+  font-weight: 700;
+}
+.navigation .next {
+  right: 10px;
+  position: absolute;
+  font-size: 25px;
+  z-index: 10;
+  top: 45%;
+}
+.navigation .nav-btn {
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+.navigation .nav-btn:hover {
+  background: white;
+}
+
+.carousel {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+
+}
+.carousel video {
+  width: 600px;
+  height: 400px;
+  transition: all 0.3s ease;
+  border:8px solid white;
+}
+
+.item {
+  position: absolute;
+  display: none;
+}
+
+.main {
+  display: block;
+}
+
+
+</style>
+
+</head>
+<body>
+    <img src="natureimg.jfif" height="70px" width="70px"/>
+    <nav id="nav_bar" style="float: right;">
+        <a href="/home/">Home</a> |
+        <a href="/about/">About us</a> |
+        <a href="/links/">Quick Links</a> |
+        <a href="/timing/">Timings</a>
+        <a href="/live/">Live Tv</a> |
+        <a href="/contact/">Contact us</a>
+        </nav>
+    
+<h3 style="text-align: center;">Gallery</h3>
+<div class="w3-content w3-display-container">
+    <img class="mySlides" src="chr2.jfif" style="width:100%">
+    <img class="mySlides" src="chr3.jpg" style="width:100%">
+    <img class="mySlides" src="chr4.jpg" style="width:100%">
+    
+  
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+
+
+  <div class="carousel-container">
+    <div class="navigation">
+        <div class="prev nav-btn"><</div>
+        <div class="next nav-btn">></div>
+      </div>
+      <div class="carousel">
+        <div class="item main">
+            <video width="320" height="240" autoplay muted>
+                <source src="v1.mp4" type="video/mp4">
+              </video>
+        </div>
+    <div class="item">
+        <video width="320" height="240" autoplay muted>
+            <source src="v2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+            <video width="320" height="240" autoplay muted>
+                <source src="v3.mp4" type="video/mp4">
+              </video>
+        </div>      
+      </div>
+   </div>
+
+   <div class="bottom-images" style="background-color: aquamarine;" >
+    <br>
+    <center><h3> Check out our Museum</h3></center>
+       <div class="images-left" style="float: left; margin-right:15%; ">
+        <img src="chr1.jpg" width="200px" height="200px" style="margin: 30px;"/>
+        <img src="chr1.jpg"  width="200px" height="200px" style="margin: 30px;"/>
+       </div>
+       <div class="images-right" >
+        <img src="chr1.jpg"  width="200px" height="200px" style="margin: 30px;"/>
+        <img src="chr1.jpg"  width="200px" height="200px" style="margin: 30px;"/>
+
+       </div>
+   </div>
+
+   <br><br>
+
+  <footer>
+    <div class="footer_section" >
+      <div class="about_section" style="float: left;">
+      <nav style="padding: 50px;">
+        <a href="#" > Know More </a>
+        <a href="#" > Quick Links </a>
+        <a href="#" > About </a>
+        <a href="#" > Privacy & Conditions </a>
+      </nav>
+      </div>
+
+      <div class="footer_address" style="float: left;">
+      <ul style="text-decoration: none;">
+       <u> Our Location</u> <br>
+        Hydrabad <br>
+        Mumbai<br>
+        Chennai<br>
+        Pune <br>
+        Bengalor<br>
+      </ul>
+    </div>
+    <div class="footer_image">
+      <img src="india.jpeg"/>
+    </div>
+    </div>
+  </footer>
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+   
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+
+
+
+
+
+    const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const images = document.querySelector('.carousel').children;
+const totalImages = images.length;
+let index = 0;
+
+prev.addEventListener('click', () => {
+  nextImage('next');
+})
+
+next.addEventListener('click', () => {
+  nextImage('prev');
+})
+
+function nextImage(direction) {
+  if(direction == 'next') {
+    index++;
+    if(index == totalImages) {
+      index = 0;
+    }
+  } else {
+    if(index == 0) {
+      index = totalImages - 1;
+    } else {
+      index--;
+    }
+  }
+
+  for(let i = 0; i < images.length; i++) {
+    images[i].classList.remove('main');
+  }
+  images[index].classList.add('main');
+}
+    </script>
+    
+
+</body>
+</html>
